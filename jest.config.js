@@ -97,8 +97,9 @@ module.exports = {
   // projects: null,
 
   // Use this configuration option to add custom reporters to Jest
-  reporters: ["default", "jest-html-reporters"],
-
+  reporters: ["default", ["jest-html-reporters", {
+    "filename": `${process.env.browser||'firefox'}_report.html`
+  }]],
 
   // Automatically reset mock state between every test
   // resetMocks: false,
